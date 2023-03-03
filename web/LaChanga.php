@@ -3,7 +3,7 @@
 
 
 
-require_once("./web/controlador.php");
+require_once("../controlador/controlador.php");
 
 $datos = new controlador();
 
