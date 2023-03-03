@@ -1,0 +1,25 @@
+<?php
+
+class modelo
+{
+
+    private $PDO;
+
+
+    public function __construct()
+    {
+        #traemos la conexion echa
+        require_once("./datos/conexion.php");
+        $con = new db();
+        #entramos a la clase que creamos que es la conexion a la base de datos
+        $this->PDO = $con->conexion();
+    }
+
+    public function MostrarInformacion()
+    {
+
+
+        $stament = $this->PDO->prepare("SELECT * FROM colectivodeartespopulares");
+        return ($stament->execute()) ? $stament->fetchAll() : false;
+    }
+}
