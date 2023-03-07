@@ -22,4 +22,22 @@ class model
         $stament = $this->PDO->prepare("SELECT * FROM colectivodeartespopulares");
         return ($stament->execute()) ? $stament->fetchAll() : false;
     }
+
+    public function ActivarCarusel()
+    {
+        $car = '';
+        $stament = $this->PDO->prepare("SELECT carusel FROM colectivodeartespopulares where id=1");
+
+
+        return ($stament->execute()) ? $stament : false;
+    }
+
+    public function MostrarCarusel()
+    {
+        $car = '';
+        $stament = $this->PDO->prepare("select carusel from colectivodeartespopulares where id BETWEEN 2 and 3");
+
+
+        return ($stament->execute()) ? $stament->fetchAll() : false;
+    }
 }

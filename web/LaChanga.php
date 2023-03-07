@@ -1,13 +1,14 @@
 <?php
-
-
-
-
+#include('../comunes/header.php');
 require_once("../controlador/controlador.php");
 
 $datos = new controlador();
 
 $filas = $datos->MostrarInformacion();
+
+
+$carusel1 = $datos->ActivarCarusel();
+$carusel = $datos->MostrarCarusel();
 
 ?>
 
@@ -66,7 +67,8 @@ $filas = $datos->MostrarInformacion();
             <!-- Single item -->
             <?php foreach ($carusel1 as $row) { ?>
                 <div class="carousel-item active">
-                    <img src="img/<?php echo $row['carusel']; ?>" width="5000" height="200" class="d-block w-100" alt="Motorbike Smoke" />
+
+                    <img src="../img/<?php echo $row['carusel']; ?>" width="5000" height="200" class="d-block w-100" alt="Motorbike Smoke" />
                     <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -75,9 +77,9 @@ $filas = $datos->MostrarInformacion();
                 </div>
             <?php } ?>
             <!-- Single item -->
-            <?php foreach ($caruselTotal as $roow) { ?>
+            <?php foreach ($carusel as $roow) { ?>
                 <div class="carousel-item">
-                    <img src="img/<?php echo $roow['carusel']; ?>" width="500" height="200" class="d-block w-100" alt="Mountaintop" />
+                    <img src="../img/<?php echo $roow['carusel']; ?>" width="500" height="200" class="d-block w-100" alt="Mountaintop" />
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Second slide label</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
