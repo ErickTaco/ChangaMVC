@@ -26,8 +26,6 @@ $carusel = $datos->MostrarCarusel();
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        body {}
-
         .carousel img {
             height: 80vh;
             margin-top: 36px;
@@ -112,7 +110,7 @@ $carusel = $datos->MostrarCarusel();
                 </div>
 
                 <div class="col-md-6 right-content">
-                    <?php foreach ($filas as $row) { ?> <img src="img/<?php echo $row['imgHistoria']; ?>" <?php } ?> class="img-fluid" alt="imgencenttro">
+                    <?php foreach ($filas as $row) { ?> <img src="../img/<?php echo $row['imgHistoria']; ?>" <?php } ?> class="img-fluid" alt="imgencenttro">
                 </div>
             </div>
         </div>
@@ -225,7 +223,7 @@ $carusel = $datos->MostrarCarusel();
             </div>
         </div>
     </div>
-
+    <?php include('../comunes/footer.php') ?>
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
 

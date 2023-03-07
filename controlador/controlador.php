@@ -59,10 +59,10 @@ class controlador
         $Passs = trim($_POST['txtclave']);
         $resultado = $Login->login($usuario, $Passs);
         if ($resultado) {
+            $_SESSION['Username'] = $usuario;
             $res = require('../web/administracion.php');
         } else {
             $res = require('../web/login.php');
         }
-        return $res;
     }
 }
