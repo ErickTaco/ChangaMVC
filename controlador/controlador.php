@@ -1,7 +1,6 @@
 <?php
-
 $ac = new controlador();
-$AC = $ac->acciones();
+$ac->acciones();
 
 class controlador
 {
@@ -11,7 +10,7 @@ class controlador
     public function  acciones()
     {
         $accion = $_REQUEST['accion'];
-        $respues = '';
+        $respues = '$accion';
 
         if ($accion != null) {
             switch ($accion) {
@@ -20,13 +19,14 @@ class controlador
                     header('location:../web/LaChanga.php');
                     break;
                 case 'login':
-                    $respues =  $this->login();
+                    $this->Login();
                     break;
+                case 'salir':
+                    $this->SalirSesion();
                 default:
             }
         } else {
         }
-        return  $respues;
     }
 
 
@@ -50,19 +50,30 @@ class controlador
     {
         return ($this->modelo->MostrarCarusel()) ? $this->modelo->MostrarCarusel() : false;
     }
-    public function login()
+
+
+
+    public function Login()
     {
-        require('../modelo/login.php');
         $res = '';
+        require('../modelo/login.php');
         $Login = new login();
         $usuario = trim($_POST['txtusuario']);
         $Passs = trim($_POST['txtclave']);
         $resultado = $Login->login($usuario, $Passs);
         if ($resultado) {
+            session_start();
             $_SESSION['Username'] = $usuario;
-            $res = require('../web/administracion.php');
+            header('location:../web/administracion.php');
         } else {
-            $res = require('../web/login.php');
+            header('location:../web/login.php');
+        }
+    }
+    public function SalirSesion()
+    {
+        session_start();
+        if (session_destroy()) {
+            header('location:../web/login.php');
         }
     }
 }

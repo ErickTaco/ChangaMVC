@@ -1,13 +1,22 @@
 <?php
-session_start();
+
 require('../modelo/login.php');
 require('../modelo/conexion.php');
 require('../controlador/controlador.php');
 
-if (isset($_SESSION['Username'])) {
-    header("location:login.php");
+session_start();
+
+if ($_SESSION['Username']) {
+    echo 'bienveidov' . $_SESSION['Username'];
+    require_once("../controlador/controlador.php");
+
+    $datos = new controlador();
+
+    $resultado = $datos->MostrarInformacion();
 } else {
+    header('location:../web/login.php');
 }
+
 
 
 ?>
@@ -32,7 +41,7 @@ if (isset($_SESSION['Username'])) {
 
 <body>
     <h1>Hola <?php echo  $_SESSION['Username']; ?>
-        <a href="conexiones/salir.php">salir</a>
+        <a href="../controlador/controlador.php?accion=salir">salir</a>
     </h1>
 
     <table class="table">

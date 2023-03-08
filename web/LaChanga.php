@@ -1,5 +1,5 @@
 <?php
-#include('../comunes/header.php');
+include('../comunes/header.php');
 require_once("../controlador/controlador.php");
 
 $datos = new controlador();
