@@ -25,16 +25,5 @@ class login
         } else {
             return false;
         }
-
-
-
-
-
-
-
-
-
-
-        header("Location:../web/administracion.php");
     }
 }

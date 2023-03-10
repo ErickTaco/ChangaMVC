@@ -7,10 +7,11 @@ class controlador
 
 
 
+
     public function  acciones()
     {
         $accion = $_REQUEST['accion'];
-        $respues = '$accion';
+
 
         if ($accion != null) {
             switch ($accion) {
@@ -23,6 +24,16 @@ class controlador
                     break;
                 case 'salir':
                     $this->SalirSesion();
+                    break;
+                case 'editarCarusel':
+                    $this->EditarCarusel();
+                    include('../web/seleccionImagen.php');
+                    break;
+                case 'GuardarFoto':
+                    require('../web/seleccionImagen.php');
+                    $this->guardarFoto();
+
+                    break;
                 default:
             }
         } else {
@@ -31,10 +42,14 @@ class controlador
 
 
     private $modelo;
+    private $editarCarusel;
+
     public function __construct()
     {
         require_once("../modelo/PaginaPrincipal");
         $this->modelo = new model();
+        require_once('../modelo/editarCarusel.php');
+        $this->editarCarusel = new EditarCarusel();
     }
 
     public function MostrarInformacion()
@@ -50,9 +65,6 @@ class controlador
     {
         return ($this->modelo->MostrarCarusel()) ? $this->modelo->MostrarCarusel() : false;
     }
-
-
-
     public function Login()
     {
         $res = '';
@@ -74,6 +86,33 @@ class controlador
         session_start();
         if (session_destroy()) {
             header('location:../web/login.php');
+        }
+    }
+
+
+    public function EditarCarusel()
+    {
+        $IdFoto = $_REQUEST['IdFoto'];
+
+        return ($this->editarCarusel->editarCarusel($IdFoto)) ? $this->editarCarusel->editarCarusel($IdFoto) : false;
+    }
+    public function guardarFoto()
+    {
+
+        $id = $_POST['IdFoto'];
+        $imagen = $_FILES['fotoCarusel']['name'];
+        $tipo = $_FILES['fotoCarusel']['type'];
+        $temp  = $_FILES['fotoCarusel']['tmp_name'];
+        $res = $this->editarCarusel->guardarFoto($id, $imagen);
+        if ($res) {
+
+
+            $_SESSION['mensaje'] = 'ocurrio un error en el servidor';
+            $_SESSION['tipo'] = 'danger';
+        } else {
+            move_uploaded_file($temp, '../img/' . $imagen);
+
+            header('location:../index.php');
         }
     }
 }

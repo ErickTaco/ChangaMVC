@@ -23,6 +23,13 @@ if ($_SESSION['Username']) {
 <?php
 
 ?>
+
+<style>
+    .mo {
+        width: 90%;
+        height: 150px;
+    }
+</style>
 <html>
 
 <head>
@@ -84,8 +91,8 @@ if ($_SESSION['Username']) {
                                     <div class="row" style="justify-content: center">
                                         <?php foreach ($resultado as $roow) { ?>
                                             <div class="card m-5" style="width: 10rem;background: transparent;">
-                                                <img src="img/<?php echo $roow['carusel']; ?>" class="img-fluid" alt="...">
-                                                <a href="conexiones/SeleccionarCarusel.php?IdFoto=<?php echo $roow['id']; ?>">
+                                                <img src="../img/<?php echo $roow['carusel']; ?>" class="img-fluid" alt="...">
+                                                <a href="../controlador/controlador.php?accion=editarCarusel&IdFoto=<?php echo $roow['id']; ?>">
                                                     <button type="button" class="btn btn-outline-warning">Warning</button>
                                                 </a>
                                             </div>
@@ -104,8 +111,8 @@ if ($_SESSION['Username']) {
 
 
                                 <label for="exampleFormControlTextarea4">Texto Historia</label>
-                                <textarea name="txtHistoria"> <?php foreach ($resultado as $row) { ?>  <?php echo $row['historia']; ?>  <?php } ?></textarea>
-                                <!--                <input type="text" required class="form-control" value=" <?php foreach ($resultado as $row) { ?>  <?php echo $row['historia']; ?>  <?php } ?>" name="txtHistoria" />-->
+                                <br><textarea class="mo" name="txtHistoria"> <?php foreach ($resultado as $row) { ?> <?php echo $row['historia']; ?> <?php } ?></textarea>
+
 
 
 

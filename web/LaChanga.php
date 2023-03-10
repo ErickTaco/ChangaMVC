@@ -103,7 +103,7 @@ $carusel = $datos->MostrarCarusel();
     <section>
         <div class="container historia" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="6000">
             <div class="row left-content">
-                <div class="col-md-6" style="border-right: 3px solid #FF7C00">
+                <div class="col-md-6" style="border-right: 3px solid #FF7C00; text-align: justify;">
                     <h2>NUESTRA HISTORIA</h2>
                     <?php foreach ($filas as $row) { ?> <?php echo $row['historia']; ?> <?php } ?>
 
@@ -128,7 +128,7 @@ $carusel = $datos->MostrarCarusel();
                 <td class="p-5">
                     <div class="text-center">MISION</div><br>
 
-                    hola ing
+                    <?php foreach ($filas as $row) { ?> <?php echo $row['Mision']; ?> <?php } ?>
                 <td class="p-5">
                     <div class="text-center">VISION</div><br>
 
