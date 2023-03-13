@@ -34,6 +34,11 @@ class controlador
                     $this->guardarFoto();
 
                     break;
+                case 'editarLaChanga':
+
+
+                    $this->editarLaChanga();
+                    break;
                 default:
             }
         } else {
@@ -43,6 +48,7 @@ class controlador
 
     private $modelo;
     private $editarCarusel;
+    private $editarLaChanga;
 
     public function __construct()
     {
@@ -50,6 +56,8 @@ class controlador
         $this->modelo = new model();
         require_once('../modelo/editarCarusel.php');
         $this->editarCarusel = new EditarCarusel();
+        require_once('../modelo/editarLaChanga.php');
+        $this->editarLaChanga = new EditarLaChanga();
     }
 
     public function MostrarInformacion()
@@ -113,6 +121,25 @@ class controlador
             move_uploaded_file($temp, '../img/' . $imagen);
 
             header('location:../index.php');
+        }
+    }
+
+    public function editarLaChanga()
+    {
+        $historia = $_POST['txtHistoria'];
+        $mision = $_POST['txtMision'];
+        $vision = $_POST['txtVision'];
+        $imagen = $_FILES['fotoHis']['name'];
+        $tipo = $_FILES['fotoHis']['type'];
+        $temp  = $_FILES['fotoHis']['tmp_name'];
+        $res = $this->editarLaChanga->editarLaChanga($historia, $imagen, $mision, $vision);
+        if ($res == true) {
+            move_uploaded_file($temp, '../img/' . $imagen);
+
+            header('location:../index.php');
+        } else {
+            $_SESSION['mensaje'] = 'ocurrio un error en el servidor';
+            $_SESSION['tipo'] = 'danger';
         }
     }
 }

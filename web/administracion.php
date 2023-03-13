@@ -82,7 +82,7 @@ if ($_SESSION['Username']) {
 
                         </div>
 
-                        <form action="conexiones/editar.php" method="POST" class="was-validated" enctype="multipart/form-data">
+                        <form action="../controlador/controlador.php?accion=editarLaChanga" method="POST" class="was-validated" enctype="multipart/form-data">
                             <div class="modal-body">
 
 
