@@ -4,10 +4,6 @@ $ac->acciones();
 
 class controlador
 {
-
-
-
-
     public function  acciones()
     {
         $accion = $_REQUEST['accion'];
@@ -32,11 +28,8 @@ class controlador
                 case 'GuardarFoto':
                     require('../web/seleccionImagen.php');
                     $this->guardarFoto();
-
                     break;
                 case 'editarLaChanga':
-
-
                     $this->editarLaChanga();
                     break;
                 default:
@@ -44,7 +37,6 @@ class controlador
         } else {
         }
     }
-
 
     private $modelo;
     private $editarCarusel;
@@ -75,7 +67,6 @@ class controlador
     }
     public function Login()
     {
-        $res = '';
         require('../modelo/login.php');
         $Login = new login();
         $usuario = trim($_POST['txtusuario']);
@@ -96,12 +87,9 @@ class controlador
             header('location:../web/login.php');
         }
     }
-
-
     public function EditarCarusel()
     {
         $IdFoto = $_REQUEST['IdFoto'];
-
         return ($this->editarCarusel->editarCarusel($IdFoto)) ? $this->editarCarusel->editarCarusel($IdFoto) : false;
     }
     public function guardarFoto()
@@ -123,7 +111,6 @@ class controlador
             header('location:../index.php');
         }
     }
-
     public function editarLaChanga()
     {
         $historia = $_POST['txtHistoria'];
@@ -136,7 +123,7 @@ class controlador
         if ($res == true) {
             move_uploaded_file($temp, '../img/' . $imagen);
 
-            header('location:../index.php');
+            header('location:../web/administracion.php');
         } else {
             $_SESSION['mensaje'] = 'ocurrio un error en el servidor';
             $_SESSION['tipo'] = 'danger';

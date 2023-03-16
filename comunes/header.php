@@ -24,7 +24,7 @@
 <!-- Titulo -->
 <div class="container-fluid fixed-top pt-1" style="background: #fff;color: black; height: 7%">
     <div class="col logo subt text-center">
-        <img class="alineadoTextoImagenCentro" src="img/lachanga.png" alt="" /> "Colectivo de Artes Populares"
+        <img class="alineadoTextoImagenCentro" src="../img/lachanga.png" alt="" /> "Colectivo de Artes Populares"
     </div>
 </div>
 <!-- Barra de Navegación -->
@@ -40,7 +40,7 @@
             <!-- Left links -->
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active text-white bg-dark rounded mx-2 my-1 px-4 py-1" aria-current="page" href="index.php">Inicio</a>
+                    <a class="nav-link active text-white bg-dark rounded mx-2 my-1 px-4 py-1" aria-current="page" href="../index.php">Inicio</a>
                 </li>
 
                 <!-- Navbar dropdown -->
@@ -51,19 +51,19 @@
                     <!-- Dropdown menu -->
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                            <a class="dropdown-item" href="ccit.php">Centro Cultural Independiente Turubamba</a>
+                            <a class="dropdown-item" href="../web/ccit.php">Centro Cultural Independiente Turubamba</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="teatro.php">Teatro</a>
+                            <a class="dropdown-item" href="../web/teatro.php">Teatro</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="estudio.php">Estudio de Grabación Bocina Records</a>
+                            <a class="dropdown-item" href="../web/estudio.php">Estudio de Grabación Bocina Records</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="turuteka.php">Turuteka Biblioteca Comunitaria</a>
+                            <a class="dropdown-item" href="../web/turuteka.php">Turuteka Biblioteca Comunitaria</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="huerta.php">Huerta Andina Comunitaria</a>
+                            <a class="dropdown-item" href="../web/huerta.php">Huerta Andina Comunitaria</a>
                         </li>
                     </ul>
                 </li>

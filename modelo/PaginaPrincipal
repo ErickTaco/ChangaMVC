@@ -17,18 +17,13 @@ class model
 
     public function MostrarInformacion()
     {
-
-
         $stament = $this->PDO->prepare("SELECT * FROM colectivodeartespopulares");
         return ($stament->execute()) ? $stament->fetchAll() : false;
     }
 
     public function ActivarCarusel()
     {
-        $car = '';
         $stament = $this->PDO->prepare("SELECT carusel FROM colectivodeartespopulares where id=1");
-
-
         return ($stament->execute()) ? $stament : false;
     }
 

@@ -27,7 +27,7 @@ $carusel = $datos->MostrarCarusel();
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         .carousel img {
-            height: 80vh;
+            height: 90vh;
             margin-top: 36px;
         }
 
@@ -68,8 +68,7 @@ $carusel = $datos->MostrarCarusel();
 
                     <img src="../img/<?php echo $row['carusel']; ?>" width="5000" height="200" class="d-block w-100" alt="Motorbike Smoke" />
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+
 
                     </div>
                 </div>
@@ -79,8 +78,7 @@ $carusel = $datos->MostrarCarusel();
                 <div class="carousel-item">
                     <img src="../img/<?php echo $roow['carusel']; ?>" width="500" height="200" class="d-block w-100" alt="Mountaintop" />
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
                     </div>
                 </div>
             <?php } ?>
