@@ -5,6 +5,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+<!-- Link Bootstrap/Estilos -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- MDB -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet" />
+<!-- Link AOS/Animaciones -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
 <style>
     .subt {
         font-family: 'Tangerine', serif;
@@ -79,22 +90,22 @@
                     <!-- Dropdown menu -->
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                            <a class="dropdown-item" href="#">Teatro Colectivo LA CHANGA</a>
+                            <a class="dropdown-item" href="../web/teatro_colectivo_la_changa.php">Teatro Colectivo LA CHANGA</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">LA CHANGA Estail</a>
+                            <a class="dropdown-item" href="../web/la_changa_estail.php">LA CHANGA Estail</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Poncho Viejo</a>
+                            <a class="dropdown-item" href="../web/poncho_viejo.php">Poncho Viejo</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Wazzaba Barrial Band</a>
+                            <a class="dropdown-item" href="../web/la_wazzaba_barrial_band.php">Wazzaba Barrial Band</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">La Comadre Radio Barrial</a>
+                            <a class="dropdown-item" href="../web/la_comadre_radio_barrial.php">La Comadre Radio Barrial</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Batumba</a>
+                            <a class="dropdown-item" href="../web/batumba.php">Batumba</a>
                         </li>
                     </ul>
                 </li>
@@ -117,6 +128,19 @@
     </div>
     <!-- Container wrapper -->
 </nav>
+
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<!-- Inicializar el AOS -->
+<script>
+    AOS.init();
+</script>
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
+
 
 <script>
     //vamos a darle el efecto al menú
